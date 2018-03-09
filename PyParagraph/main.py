@@ -29,7 +29,7 @@ with open(filepath, 'r', encoding='latin-1') as newtxt:
 
     averageLength = mean(sentLength)
 
-answer = []
+answer = [] # Answer list
 answer.append('\nParagraph Analysis')
 answer.append('-------------------')
 answer.append('Approximate Word Count: ' + str(wordCount))
