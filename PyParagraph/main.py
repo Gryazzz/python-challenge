@@ -1,9 +1,8 @@
- import os
+import os
 from statistics import mean
 import re
 
-os.chdir('../python-challenge/PyParagraph/raw_data')
-filepath = os.path.join('paragraph_1.txt')
+filepath = os.path.join('raw_data', 'paragraph_1.txt')
 
 with open(filepath, 'r', encoding='latin-1') as txt:
     

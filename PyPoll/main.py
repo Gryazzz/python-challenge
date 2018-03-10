@@ -1,10 +1,9 @@
 import csv
 from collections import Counter
-#import os
+import os
 
-#filename = os.path.join('../PyPoll/raw_data', 'election_data_1.csv')
-filename = '/Users/sonik/Desktop/BC/Homework/03-Python/Instructions/PyPoll/raw_data/election_data_2.csv'
-newfile = '/Users/sonik/Desktop/BC/Homework/03-Python/Instructions/PyPoll/raw_data/PyRollResults.txt'
+filename = os.path.join('raw_data', 'election_data_2.csv')
+newfile = os.path.join('raw_data', 'PyRollResults.txt')
 
 with open(filename, 'r', newline='', encoding='latin-1') as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -16,7 +15,6 @@ with open(filename, 'r', newline='', encoding='latin-1') as csvfile:
     answer = [] # Final answer to print out and export
 
     for row in csvreader: # Really slow
-        #if row[0] != 'Voter ID': # Get rid of first row in csv
         candList.append(row[2])
 
     totalVotes = len(candList)

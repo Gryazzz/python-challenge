@@ -4,14 +4,18 @@ import os
 import datetime
 
 # Read all .csv files in a folder
-filepaths = glob.glob('/Users/sonik/Desktop/BC/GitHub/Python/python-challenge/PyBoss/raw_data/*.csv')
+# Each * means one folder from root dir to current. Don't know how to make it flexible
+filepaths = glob.glob('/*/*/*/*/*/*/python-challenge/PyBoss/raw_data/*.csv')
+#filepaths = glob.glob('~/python-challenge/PyBoss/raw_data/*.csv')
+#filepaths = glob.glob(os.path.abspath('/raw_data/*.csv'))
 x = 1
+print(filepaths)
 
 # Iterate through each file
 for filename in filepaths:
-    os.chdir('/Users/sonik/Desktop/BC/GitHub/Python/python-challenge/PyBoss/answers/')
-    # In a separate folder create a new file for answer with unique number
-    outputpath = os.path.join('answer_for_file_' + str(x) + '.csv')
+    # In a separate folder create a new file for answer with unique name
+    # Wanted to add the name of the original file, but failed
+    outputpath = os.path.join('answers', 'answer_for_file_' + str(x) + '.csv')
     x += 1
     
     with open(filename, 'r', newline='', encoding='latin-1') as csvfile, open(outputpath, 'w', newline='') as matched:
